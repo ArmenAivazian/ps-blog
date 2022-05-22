@@ -1,6 +1,8 @@
 module.exports = {
+  extends: 'next/core-web-vitals',
   plugins: ['prettier'],
   rules: {
+    'newline-before-return': 'error',
     'prettier/prettier': 'error',
   },
 
