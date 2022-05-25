@@ -49,13 +49,25 @@ const Header = () => {
       <AppBar>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box sx={{ mr: 2 }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Image
                 src="/assets/images/logo-light-50.png"
                 height={32}
                 width={32}
                 alt="logo"
               />
+              <Typography
+                noWrap
+                sx={{
+                  fontSize: 21,
+                  ml: 0.25,
+                  display: { xs: 'none', md: 'flex' },
+                  fontWeight: 700,
+                  letterSpacing: '-0.05rem',
+                }}
+              >
+                Blog
+              </Typography>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -93,26 +105,38 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
+            <Box
               sx={{
-                mr: 2,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
+                alignItems: 'center',
               }}
             >
-              LOGO
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Image
+                src="/assets/images/logo-light-50.png"
+                width={32}
+                height={32}
+                alt="logo"
+              />
+              <Typography
+                noWrap
+                sx={{
+                  mr: 2,
+                  display: { xs: 'flex', md: 'none' },
+                  fontWeight: 700,
+                  letterSpacing: '-0.05rem',
+                  fontSize: 22,
+                }}
+              >
+                Blog
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: 'none', md: 'flex', justifyContent: 'center' },
+              }}
+            >
               {pages.map((page) => (
                 <Button
                   key={page}
