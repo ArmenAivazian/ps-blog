@@ -1,5 +1,5 @@
 module.exports = {
-  extends: 'next/core-web-vitals',
+  extends: 'react-app',
   plugins: ['prettier'],
   rules: {
     'newline-before-return': 'error',

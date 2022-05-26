@@ -14,7 +14,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Image from 'next/image';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -50,12 +49,12 @@ const Header = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Image
+              {/* <Image
                 src="/assets/images/logo-light-50.png"
                 height={32}
                 width={32}
                 alt="logo"
-              />
+              /> */}
               <Typography
                 noWrap
                 sx={{
@@ -112,12 +111,12 @@ const Header = () => {
                 alignItems: 'center',
               }}
             >
-              <Image
+              {/* <Image
                 src="/assets/images/logo-light-50.png"
                 width={32}
                 height={32}
                 alt="logo"
-              />
+              /> */}
               <Typography
                 noWrap
                 sx={{
