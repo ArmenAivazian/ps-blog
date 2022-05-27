@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import * as React from 'react';
@@ -14,6 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Logo from '../Logo';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -49,17 +49,12 @@ const Header = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              {/* <Image
-                src="/assets/images/logo-light-50.png"
-                height={32}
-                width={32}
-                alt="logo"
-              /> */}
+              <Logo />
               <Typography
                 noWrap
                 sx={{
                   fontSize: 21,
-                  ml: 0.25,
+                  ml: 1,
                   display: { xs: 'none', md: 'flex' },
                   fontWeight: 700,
                   letterSpacing: '-0.05rem',
@@ -111,16 +106,11 @@ const Header = () => {
                 alignItems: 'center',
               }}
             >
-              {/* <Image
-                src="/assets/images/logo-light-50.png"
-                width={32}
-                height={32}
-                alt="logo"
-              /> */}
+              <Logo />
               <Typography
                 noWrap
                 sx={{
-                  mr: 2,
+                  ml: 1,
                   display: { xs: 'flex', md: 'none' },
                   fontWeight: 700,
                   letterSpacing: '-0.05rem',
