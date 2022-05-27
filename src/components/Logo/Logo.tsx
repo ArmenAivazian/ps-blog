@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import React from 'react';
 import { fill } from './constants';
 import { LogoProps } from './types';
 
