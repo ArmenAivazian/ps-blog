@@ -1,9 +1,43 @@
 module.exports = {
   extends: 'react-app',
-  plugins: ['prettier'],
+  plugins: ['prettier', 'simple-import-sort'],
   rules: {
     'newline-before-return': 'error',
     'prettier/prettier': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // React related packages come first, then other external packages
+          ['^react', '^@?\\w'],
+          // Our external packages
+          ['^@mui/'],
+          // Internal packages
+          [
+            '^src',
+            '^components',
+            '^types',
+            '^containers',
+            '^pages',
+            '^constants',
+            '^assets',
+            '^hooks',
+            '^layouts',
+            '^icons',
+            '^auth',
+            '^utils',
+            '^contexts',
+          ],
+          // Relative imports
+          ['^\\.'],
+          // Side effect imports
+          ['^\\u0000'],
+          // Style imports
+          ['/styled'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
   },
 
   // my old rules ("esLint hands")

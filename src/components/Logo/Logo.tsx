@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+
 import { fill } from './constants';
 import { LogoProps } from './types';
 
