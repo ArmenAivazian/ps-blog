@@ -13,9 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
+import Logo from 'src/components/Logo';
 import { sxContainer } from 'src/style/sxContainer';
-
-import Logo from '../../Logo';
 
 import { Container } from './styled';
 
