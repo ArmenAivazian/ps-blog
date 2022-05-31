@@ -32,8 +32,6 @@ module.exports = {
           ['^\\.'],
           // Side effect imports
           ['^\\u0000'],
-          // Style imports
-          ['/styled'],
         ],
       },
     ],
