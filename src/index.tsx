@@ -7,6 +7,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import App from 'src/containers/App';
 import theme from 'src/style/theme';
 
+import './i18n';
+
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement!);
 
