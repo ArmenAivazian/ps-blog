@@ -1,1 +1,1 @@
-export const sxContainer = { px: { lg: 3, sm: 2, xs: 1 } };
+export const sxContainer = { px: { laptop: 3, tablet: 2, mobile: 1 } };
