@@ -15,6 +15,8 @@ const NavigationLink = ({ children, href }: ButtonProps) => {
       sx={{
         color: 'common.white',
         background: isActive ? `${primary.light}!important` : 'transparent',
+        fontSize: { laptop: 18, tablet: 16, mobile: 14 },
+        fontWeight: 600,
       }}
       component={Link}
       to={href || '/'}
