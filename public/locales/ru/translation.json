@@ -1,3 +1,5 @@
 {
-  "site-name": "Блог"
+  "navigation": {
+    "war": "Війна"
+  }
 }
