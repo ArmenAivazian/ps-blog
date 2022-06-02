@@ -1,12 +1,25 @@
+import { useState } from 'react';
 import Typist from 'react-typist';
 
-import Box from '@mui/material/Box';
+import { Wrapper } from './styled';
 
 const Main = () => {
+  const [indicator, setIndicator] = useState(false);
+
+  function handleEndTyping() {
+    console.log(indicator);
+    setIndicator(!indicator);
+  }
+
   return (
-    <Box sx={{ height: 2000, pt: 50 }}>
-      <Typist>Animate this text.</Typist>
-    </Box>
+    <Wrapper sx={{ height: 2000, pt: 50 }}>
+      <Typist onTypingDone={handleEndTyping}>
+        First Sentence
+        <Typist.Delay ms={500} />
+        <Typist.Backspace count={8} delay={200} />
+        This won't be animated until 500ms after the first sentenced is rendered
+      </Typist>
+    </Wrapper>
   );
 };
 
