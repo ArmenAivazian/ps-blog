@@ -1,23 +1,22 @@
 import { styled } from '@mui/material/styles';
 
-export const Wrapper = styled('div')`
-  .Typist .Cursor {
-    display: inline-block;
-  }
-  .Typist .Cursor--blinking {
-    opacity: 1;
-    animation: blink 1s linear infinite;
-  }
+import { media } from 'src/utils/media';
 
-  @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+export const Wrapper = styled('div')`
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px 15px;
+  font-size: 22px;
+  line-height: 1.2;
+  ${media('tablet')} {
+    padding: 72px 20px;
+    font-size: 27px;
+  }
+  ${media('laptop')} {
+    padding: 75px 25px;
+    font-size: 32px;
   }
 `;

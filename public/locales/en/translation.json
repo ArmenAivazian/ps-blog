@@ -1,5 +1,19 @@
 {
   "navigation": {
     "war": "War"
+  },
+  "welcomeText": {
+    "amount": 11,
+    "1": "russian? Go f*ck yourself!",
+    "2": "Hi!",
+    "3": "My name Armen",
+    "4": "I'm glad to welcome you the blog 'Front-End engineer's NOTES'",
+    "5": "Blog about everything",
+    "6": "Blog about nothing",
+    "7": "And about everything else : )",
+    "8": "So sit back and make coffee",
+    "9": "So sit back and make favorite tea",
+    "10": "So sit back and make",
+    "11": "So sit back and make water??"
   }
 }
