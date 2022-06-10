@@ -17,6 +17,8 @@ const Main = () => {
   const amount = +t('welcomeText.amount');
   for (let i = 1; i <= amount; i++) text.push(t(`welcomeText.${i}`));
 
+  //TODO: зробити вспливашку з пропозицією перейти на roadmap сайту (після завершення анімації тексту)
+
   return (
     <Wrapper>
       <Typed

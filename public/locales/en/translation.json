@@ -3,17 +3,16 @@
     "war": "War"
   },
   "welcomeText": {
-    "amount": 11,
-    "1": "russian? Go f*ck yourself!",
-    "2": "Hi!",
-    "3": "My name Armen",
-    "4": "I'm glad to welcome you the blog 'Front-End engineer's NOTES'",
-    "5": "Blog about everything",
-    "6": "Blog about nothing",
-    "7": "And about everything else : )",
-    "8": "So sit back and make coffee",
-    "9": "So sit back and make favorite tea",
-    "10": "So sit back and make",
-    "11": "So sit back and make water??"
+    "amount": 10,
+    "1": "Hi!",
+    "2": "My name Armen",
+    "3": "I'm glad to welcome you the blog 'Front-End engineer's NOTES'",
+    "4": "Blog about everything",
+    "5": "Blog about nothing",
+    "6": "And about everything else : )",
+    "7": "So sit back and make coffee",
+    "8": "So sit back and make favorite tea",
+    "9": "So sit back and make",
+    "10": "So sit back and make water??"
   }
 }
