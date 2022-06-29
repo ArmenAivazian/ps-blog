@@ -1,6 +1,8 @@
 {
   "navigation": {
-    "war": "Війна"
+    "roadMap": "Карта сайту",
+    "translation": "Переклади",
+    "thought": "Думки"
   },
   "welcomeText": {
     "amount": 13,

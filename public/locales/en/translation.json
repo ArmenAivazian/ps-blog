@@ -1,6 +1,8 @@
 {
   "navigation": {
-    "war": "War"
+    "roadMap": "Roadmap",
+    "translation": "Translation",
+    "thought": "Thought"
   },
   "welcomeText": {
     "amount": 10,
