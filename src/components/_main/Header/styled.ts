@@ -8,7 +8,6 @@ import { media } from 'src/utils/media';
 
 export const Container = styled('div')`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: ${({ theme }): string => theme.spacing(1)} 0;
   ${media('tablet')} {
@@ -21,6 +20,7 @@ export const LogoWrapper = styled(Link)`
   align-items: flex-end;
   color: inherit;
   text-decoration: none;
+  margin-right: auto;
 `;
 
 export const LogoText = styled(Typography)`

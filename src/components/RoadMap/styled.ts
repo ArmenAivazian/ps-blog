@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import DialogContent from '@mui/material/DialogContent';
-import { createStyles, styled, withStyles } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 import { media } from 'src/utils/media';
 
@@ -23,6 +23,7 @@ export const Title = styled('p')`
   font-size: 18px;
   line-height: 1;
   margin: 0;
+  color: ${({ theme }): string => theme.palette.primary.main};
   ${media('tablet')} {
     font-size: 22px;
   }
