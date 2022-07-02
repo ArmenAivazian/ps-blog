@@ -12,14 +12,14 @@ const Transition = forwardRef(
     },
     ref: React.Ref<unknown>,
   ) => {
-    const { complex, enteringScreen } = theme.transitions.duration;
+    const { enteringScreen } = theme.transitions.duration;
     const { timeout, ...otherProps } = props;
 
     return (
       <Slide
         direction="up"
         ref={ref}
-        timeout={{ enter: complex, exit: enteringScreen }}
+        timeout={{ enter: enteringScreen, exit: enteringScreen }}
         {...otherProps}
       />
     );
