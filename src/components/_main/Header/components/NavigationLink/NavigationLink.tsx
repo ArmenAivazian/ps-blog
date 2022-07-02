@@ -19,7 +19,7 @@ const NavigationLink = ({ children, href }: ButtonProps) => {
         fontWeight: 600,
         borderRadius: 0,
         '&:hover': {
-          background: primary.light,
+          background: primary.main,
         },
         '&:first-of-type': {
           borderTopLeftRadius: 4,

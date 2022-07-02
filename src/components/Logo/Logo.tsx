@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box';
 
-import { fill } from './constants';
+import theme from 'src/style/theme';
+
 import { LogoProps } from './types';
 
-const Logo = ({ sx, theme = 'light', size = 32 }: LogoProps) => {
-  const { light, dark } = fill;
+const Logo = ({ sx, fill = 'light', size = 32 }: LogoProps) => {
+  const { black, white } = theme.palette.common;
 
   return (
     <Box sx={{ display: 'inline', ...sx }}>
@@ -12,7 +13,7 @@ const Logo = ({ sx, theme = 'light', size = 32 }: LogoProps) => {
         width={size}
         height={size}
         viewBox="0 0 512 512"
-        fill={theme === 'light' ? light : dark}
+        fill={fill === 'light' ? white : black}
       >
         <path
           d="M410.566,59.354V28.962C410.566,12.991,397.599,0,381.665,0h-251.33c-15.934,0-28.901,12.991-28.901,28.962v30.392

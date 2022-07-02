@@ -20,6 +20,22 @@ const theme = createTheme({
   typography: {
     fontFamily: "'JetBrains Mono', monospace",
   },
+  palette: {
+    primary: {
+      main: '#e85a4f',
+      light: '#e98074',
+    },
+    secondary: {
+      main: '#d8c3a5',
+    },
+    text: {
+      primary: '#8e8d8a',
+      secondary: '#fff',
+    },
+    background: {
+      default: '#eae7dc',
+    },
+  },
   breakpoints: {
     values: BREAKPOINTS,
   },

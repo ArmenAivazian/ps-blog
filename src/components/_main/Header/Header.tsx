@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import LanguageIcon from '@mui/icons-material/Language';
 import MapIcon from '@mui/icons-material/Map';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Slide from '@mui/material/Slide';
@@ -15,7 +14,13 @@ import { sxContainer } from 'src/style/sxContainer';
 
 import NavigationLink from './components/NavigationLink';
 import { useChangeLanguage } from './hooks';
-import { Container, LogoText, LogoWrapper, Navigation } from './styled';
+import {
+  Container,
+  LogoText,
+  LogoWrapper,
+  Navigation,
+  Wrapper,
+} from './styled';
 
 const Header = () => {
   const [isActiveRoadMap, setIsActiveRoadMap] = useState(false);
@@ -27,7 +32,7 @@ const Header = () => {
   return (
     <>
       <Slide appear={false} direction="down" in={!trigger}>
-        <AppBar sx={sxContainer}>
+        <Wrapper sx={sxContainer}>
           <Container>
             <LogoWrapper to="/">
               <Logo />
@@ -55,7 +60,7 @@ const Header = () => {
               <MapIcon />
             </IconButton>
           </Container>
-        </AppBar>
+        </Wrapper>
       </Slide>
       <Box />
       <RoadMap

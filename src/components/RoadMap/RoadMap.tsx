@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 import CloseIcon from '@mui/icons-material/Close';
-import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
 import Slide from '@mui/material/Slide';
 
@@ -10,7 +9,7 @@ import { useTranslation } from 'src/hooks/useTranslations';
 import { sxContainer } from 'src/style/sxContainer';
 
 import Transition from './components/Transition';
-import { Head, Item, Title, Wrapper } from './styled';
+import { DialogStyle, Head, Item, Title, Wrapper } from './styled';
 import { RadMapProps } from './types';
 
 const RoadMap = ({ active, onClose }: RadMapProps) => {
@@ -18,7 +17,7 @@ const RoadMap = ({ active, onClose }: RadMapProps) => {
   const navigationItems = useNavigationItems('roadmap');
 
   return (
-    <Dialog
+    <DialogStyle
       fullScreen
       open={active}
       onClose={onClose}
@@ -57,7 +56,7 @@ const RoadMap = ({ active, onClose }: RadMapProps) => {
           </Slide>
         ))}
       </Wrapper>
-    </Dialog>
+    </DialogStyle>
   );
 };
 

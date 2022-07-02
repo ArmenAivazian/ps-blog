@@ -1,10 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Link } from 'react-router-dom';
 
+import AppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
 import { media } from 'src/utils/media';
+
+export const Wrapper = styled(AppBar)`
+  background-color: ${({ theme }): string => theme.palette.secondary.main};
+  box-shadow: ${({ theme }): string => theme.shadows[1]};
+`;
 
 export const Container = styled('div')`
   display: flex;
@@ -28,6 +34,7 @@ export const LogoText = styled(Typography)`
   margin-left: ${({ theme }): string => theme.spacing(1)};
   font-weight: 700;
   letter-spacing: -0.05rem;
+  color: ${({ theme }): string => theme.palette.text.secondary};
 `;
 
 export const Navigation = styled('div')`
