@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import LanguageIcon from '@mui/icons-material/Language';
 import MapIcon from '@mui/icons-material/Map';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,12 +14,15 @@ import { useNavigationItems } from 'src/hooks/useNavigationItems';
 import { sxContainer } from 'src/style/sxContainer';
 
 import NavigationLink from './components/NavigationLink';
+import { useChangeLanguage } from './hooks';
 import { Container, LogoText, LogoWrapper, Navigation } from './styled';
 
 const Header = () => {
   const [isActiveRoadMap, setIsActiveRoadMap] = useState(false);
+
   const trigger = useScrollTrigger();
   const navigationItems = useNavigationItems('header');
+  const changeLanguage = useChangeLanguage();
 
   return (
     <>
@@ -36,6 +40,13 @@ const Header = () => {
                 </NavigationLink>
               ))}
             </Navigation>
+            <IconButton
+              color="inherit"
+              component="button"
+              onClick={changeLanguage}
+            >
+              <LanguageIcon />
+            </IconButton>
             <IconButton
               color="inherit"
               component="button"
