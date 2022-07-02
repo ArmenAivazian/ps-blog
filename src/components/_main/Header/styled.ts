@@ -29,3 +29,11 @@ export const LogoText = styled(Typography)`
   font-weight: 700;
   letter-spacing: -0.05rem;
 `;
+
+export const Navigation = styled('div')`
+  display: none;
+  margin-right: ${({ theme }): string => theme.spacing(1)};
+  ${media('tablet')} {
+    display: flex;
+  }
+`;

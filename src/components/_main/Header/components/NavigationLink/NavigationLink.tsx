@@ -21,11 +21,11 @@ const NavigationLink = ({ children, href }: ButtonProps) => {
         '&:hover': {
           background: primary.light,
         },
-        '&:first-child': {
+        '&:first-of-type': {
           borderTopLeftRadius: 4,
           borderBottomLeftRadius: 4,
         },
-        '&:last-child': {
+        '&:last-of-type': {
           borderTopRightRadius: 4,
           borderBottomRightRadius: 4,
         },

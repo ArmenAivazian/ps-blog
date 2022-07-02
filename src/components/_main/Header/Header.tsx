@@ -13,7 +13,7 @@ import { useNavigationItems } from 'src/hooks/useNavigationItems';
 import { sxContainer } from 'src/style/sxContainer';
 
 import NavigationLink from './components/NavigationLink';
-import { Container, LogoText, LogoWrapper } from './styled';
+import { Container, LogoText, LogoWrapper, Navigation } from './styled';
 
 const Header = () => {
   const [isActiveRoadMap, setIsActiveRoadMap] = useState(false);
@@ -29,13 +29,13 @@ const Header = () => {
               <Logo />
               <LogoText>Blog</LogoText>
             </LogoWrapper>
-            <Box sx={{ display: 'flex', mr: 1 }}>
+            <Navigation>
               {navigationItems.map(({ url, name }) => (
                 <NavigationLink key={name} href={url}>
                   {name}
                 </NavigationLink>
               ))}
-            </Box>
+            </Navigation>
             <IconButton
               color="inherit"
               component="button"
