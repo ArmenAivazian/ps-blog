@@ -29,7 +29,7 @@ const Header = () => {
               <Logo />
               <LogoText>Blog</LogoText>
             </LogoWrapper>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', mr: 1 }}>
               {navigationItems.map(({ url, name }) => (
                 <NavigationLink key={name} href={url}>
                   {name}

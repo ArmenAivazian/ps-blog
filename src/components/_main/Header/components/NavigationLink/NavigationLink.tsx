@@ -17,8 +17,17 @@ const NavigationLink = ({ children, href }: ButtonProps) => {
         background: isActive ? `${primary.light}!important` : 'transparent',
         fontSize: { laptop: 18, tablet: 16, mobile: 14 },
         fontWeight: 600,
+        borderRadius: 0,
         '&:hover': {
           background: primary.light,
+        },
+        '&:first-child': {
+          borderTopLeftRadius: 4,
+          borderBottomLeftRadius: 4,
+        },
+        '&:last-child': {
+          borderTopRightRadius: 4,
+          borderBottomRightRadius: 4,
         },
       }}
       component={Link}
