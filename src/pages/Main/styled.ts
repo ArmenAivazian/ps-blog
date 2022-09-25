@@ -2,23 +2,32 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Zoom from '@mui/material/Zoom';
 
+import { HEADER_HEIGHT } from 'src/constants/header';
 import { media } from 'src/utils/media';
 
+function heightHeader(size: 'mobile' | 'tablet' | 'laptop') {
+  return `
+    min-height: calc(100vh - ${HEADER_HEIGHT[size]}px); 
+    height: calc(100vh - ${HEADER_HEIGHT[size]}px);
+  `;
+}
+
 export const Wrapper = styled('div')`
-  min-height: 100vh;
-  height: 100vh;
+  ${heightHeader('mobile')}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 55px 15px;
+  padding: 20px 15px;
   font-size: 22px;
   line-height: 1.2;
   ${media('tablet')} {
-    padding: 72px 20px;
+    ${heightHeader('tablet')}
+    padding: 20px 20px;
     font-size: 27px;
   }
   ${media('laptop')} {
-    padding: 75px 25px;
+    ${heightHeader('laptop')}
+    padding: 20px 25px;
     font-size: 32px;
   }
 `;
