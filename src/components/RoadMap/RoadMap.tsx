@@ -47,6 +47,7 @@ const RoadMap = ({ active, onClose }: RadMapProps) => {
               component={Link}
               to={url}
               variant="outlined"
+              onClick={onClose}
               sx={{
                 transitionDelay: `${200 + 100 * (index + 1)}ms !important`,
               }}
