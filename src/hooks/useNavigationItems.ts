@@ -18,7 +18,7 @@ function getNavigationList(
   t: TFunction,
 ) {
   return list.map(({ url, name }) => {
-    return { url: `/${url}`, name: t(name) };
+    return { url: `/category/${url}`, name: t(name) };
   });
 }
 
