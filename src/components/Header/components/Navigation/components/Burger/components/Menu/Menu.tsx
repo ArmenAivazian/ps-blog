@@ -1,5 +1,5 @@
 import type { MenuProps } from "./types";
-import Logo from "../../../Logo";
+import Logo from "../../../../../Logo";
 import Button from "./components/Button";
 
 const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
