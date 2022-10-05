@@ -1,0 +1,53 @@
+---
+import Logo from "./components/Logo";
+import Navigation from "./components/Navigation";
+const response = await fetch(import.meta.env.HYGRAPH_KEY, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify({
+    query: `
+    {
+      categories {
+        name
+        slug
+        description
+        posts(last: 3) {
+          slug
+          title
+        }
+        subcategories {
+          name
+          slug
+          description
+          icon {
+            text
+          }
+        }
+      }
+    }
+      `,
+  }),
+});
+const categories = await response.json();
+---
+
+<div class="relative bg-white">
+  <div class="mx-auto px-4 sm:px-6">
+    <div
+      class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10"
+    >
+      <Logo class="flex justify-start lg:w-0 lg:flex-1" iconClass="sm:h-10" />
+      <Navigation client:visible categories={categories} />
+      <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+        <a
+          href="#"
+          class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+          >Всі пости</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
