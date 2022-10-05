@@ -12,15 +12,17 @@ export interface Post {
   title: string;
 }
 
-interface Category extends Subcategory {
+export interface Category extends Subcategory {
   posts: Post[];
   subcategories: Subcategory[];
 }
 
+export interface NavigationProps {
+  categories: CategoriesData;
+}
+
 export interface CategoriesData {
-  categories: {
-    data: {
-      categories: Category[];
-    };
+  data: {
+    categories: Category[];
   };
 }

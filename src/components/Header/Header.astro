@@ -39,7 +39,7 @@ const categories = await response.json();
     <div
       class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10"
     >
-      <Logo class="flex justify-start lg:w-0 lg:flex-1" />
+      <Logo class="flex justify-start lg:w-0 lg:flex-1" iconClass="sm:h-10" />
       <Navigation client:visible categories={categories} />
       <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
         <a

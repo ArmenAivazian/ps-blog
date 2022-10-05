@@ -1,7 +1,8 @@
 import { useState } from "preact/hooks";
 import Menu from "./components/Menu";
+import type { BurgerProps } from "./types";
 
-const Burger = () => {
+const Burger = ({ categories }: BurgerProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,7 +31,7 @@ const Burger = () => {
           </svg>
         </button>
       </div>
-      <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Menu isOpen={isOpen} categories={categories} setIsOpen={setIsOpen} />
     </>
   );
 };

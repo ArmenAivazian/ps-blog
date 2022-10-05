@@ -2,16 +2,16 @@ import { useState } from "preact/hooks";
 import Burger from "./components/Burger";
 import Button from "./components/Button";
 import ListItems from "./components/ListItems";
-import type { CategoriesData } from "./types";
+import type { NavigationProps } from "./types";
 
-const Navigation = ({ categories }: CategoriesData) => {
+const Navigation = ({ categories }: NavigationProps) => {
   const [openCategory, setOpenCategory] = useState("");
 
   const data = categories.data.categories;
 
   return (
     <>
-      <Burger />
+      <Burger categories={data} />
       <nav className="hidden space-x-10 md:flex">
         {data.map(({ name, slug, subcategories, posts }) => {
           const isOpenCategory = name === openCategory;

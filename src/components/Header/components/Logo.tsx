@@ -1,9 +1,15 @@
-const Logo = ({ class: classString }: { class?: string }) => {
+const Logo = ({
+  class: classString,
+  iconClass,
+}: {
+  class?: string;
+  iconClass?: string;
+}) => {
   return (
     <div className={classString}>
       <a href="/">
         <span className="sr-only">Блог Армена</span>
-        <svg viewBox="0 0 512 512" className="h-8 w-auto sm:h-10">
+        <svg viewBox="0 0 512 512" className={`h-8 w-auto ${iconClass}`}>
           <path
             d="M410.566,59.354V28.962C410.566,12.991,397.599,0,381.665,0h-251.33c-15.934,0-28.901,12.991-28.901,28.962v30.392
         c-16.62,4.351-28.981,19.368-28.981,37.335v38.557c0,5.34,4.325,9.66,9.66,9.66h19.938l26.874,339.708
