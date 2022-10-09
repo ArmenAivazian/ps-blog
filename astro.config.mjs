@@ -7,6 +7,6 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://blog-taupe-one.vercel.app/',
   integrations: [mdx(), sitemap(), tailwind(), preact()]
 });
