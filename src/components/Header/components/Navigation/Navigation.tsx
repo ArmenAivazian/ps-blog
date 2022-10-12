@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+import { Resources } from "../../../../constants/resources";
 import Burger from "./components/Burger";
 import Button from "./components/Button";
 import ListItems from "./components/ListItems";
@@ -46,7 +47,7 @@ const Navigation = ({ categories }: NavigationProps) => {
             );
           return (
             <a
-              href={slug}
+              href={`${Resources.Category}${slug}`}
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
               {name}

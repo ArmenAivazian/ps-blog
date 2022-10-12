@@ -33,13 +33,12 @@ const ListItems = ({ slug, subcategories, posts }: ListItemsProps) => {
         </div>
       </div>
       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-        {subcategories.map(({ name, slug, description, icon }) => (
+        {subcategories.map(({ name, slug, description }) => (
           <a
             href={`${Resources.Category}${slug}`}
             className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
           >
-            <span dangerouslySetInnerHTML={{ __html: icon?.text }}></span>
-            <div className="ml-4">
+            <div>
               <p className="text-base font-medium text-gray-900">{name}</p>
               <p className="mt-1 text-sm text-gray-500">{description}</p>
             </div>

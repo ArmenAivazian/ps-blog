@@ -37,15 +37,12 @@ const Menu = ({ isOpen, categories, setIsOpen }: MenuProps) => {
                   return subcategories.length ? (
                     <div className="grid gap-y-8">
                       {category}
-                      {subcategories.map(({ slug, name, icon }) => (
+                      {subcategories.map(({ slug, name }) => (
                         <a
                           href={slug}
                           className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 pl-5"
                         >
-                          <span
-                            dangerouslySetInnerHTML={{ __html: icon?.text }}
-                          ></span>
-                          <span className="ml-3 text-base font-medium text-gray-900">
+                          <span className="text-base font-medium text-gray-900">
                             {name}
                           </span>
                         </a>

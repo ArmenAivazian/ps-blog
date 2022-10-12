@@ -2,9 +2,6 @@ export interface Subcategory {
   name: string;
   slug: string;
   description: string;
-  icon: {
-    text: string;
-  };
 }
 
 export interface Post {
