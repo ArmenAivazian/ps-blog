@@ -49,10 +49,6 @@ export async function getStaticPaths() {
           name
           slug
         }
-        subcategories {
-          name
-          slug
-        }
         coverImage {
           url
           fileName
@@ -121,16 +117,8 @@ const { title, createdAt, categories, subcategories, coverImage, content } =
                     href={`${Resources.Category}${slug}`}
                     class="lowercase inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5"
                   >
-                    #{categoryName}
+                    #{categoryName.replaceAll(" ", "-")}
                   </a>
-                  {subcategories.map(({ name, slug }) => (
-                    <a
-                      href={`${Resources.Category}${slug}`}
-                      class="lowercase inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5"
-                    >
-                      #{`${categoryName}-${name}`}
-                    </a>
-                  ))}
                 </>
               ))
             }
