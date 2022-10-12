@@ -1,4 +1,4 @@
 export enum Resources {
-  Post = "/posts/",
-  Category = "/categories/",
+  Post = "/post/",
+  Category = "/category/",
 }

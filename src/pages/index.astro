@@ -4,13 +4,15 @@ import Header from "../components/Header/Header.astro";
 import { SITE_DESCRIPTION } from "../config";
 
 const list = [
-  'Слава Україні!', 
-  'Всім привіт!', 
-  'Мене звати Армен', 
-  "Я радий вітати тебе у блозі <span class='font-bold'>'Front-End engineer's NOTES'</span>", 
-  "Це блог про все - ні про що - та про усіляке інше", 
-  "Тож сідайте зручніше та заварюйте каву/чай/воду"
-]
+  "Слава Україні!",
+  "Всім привіт!",
+  "Мене звати Армен",
+  "Я радий вітати тебе у блозі <span class='font-bold'>'Front-End engineer's NOTES'</span>",
+  "Це блог про все - ні про що - та про усіляке інше",
+  "Тож сідайте зручніше та заварюйте каву/чай/воду",
+  "...",
+  "P.S. Як бачите, я ще працюю над цією сторінкою, дякую за розуміння :)",
+];
 ---
 
 <!DOCTYPE html>
@@ -23,9 +25,12 @@ const list = [
     <main class="my-auto">
       <ol class="px-2 md:px-4">
         {
-        list.map((item, index) => 
-          <li set:html={`${index + 1}. ${item}`} class="py-1 text-sm md:text-2xl xl:text-3xl"/>
-        )
+          list.map((item, index) => (
+            <li
+              set:html={`${index + 1}. ${item}`}
+              class="py-1 text-sm md:text-2xl xl:text-3xl"
+            />
+          ))
         }
       </ol>
     </main>

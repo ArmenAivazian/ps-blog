@@ -1,6 +1,7 @@
 import type { MenuProps } from "./types";
 import Logo from "../../../../../Logo";
 import Button from "./components/Button";
+import { Resources } from "../../../../../../../../constants/resources";
 
 const Menu = ({ isOpen, categories, setIsOpen }: MenuProps) => {
   const containerStyle = isOpen ? undefined : { display: "none" };
@@ -27,7 +28,7 @@ const Menu = ({ isOpen, categories, setIsOpen }: MenuProps) => {
                 {categories.map(({ name, slug, subcategories }) => {
                   const category = (
                     <a
-                      href={slug}
+                      href={`${Resources.Category}${slug}`}
                       className="hover:text-indigo-500 text-base font-bold -mb-3"
                     >
                       {name}
