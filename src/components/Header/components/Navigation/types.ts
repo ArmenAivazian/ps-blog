@@ -10,6 +10,7 @@ export interface Post {
 }
 
 export interface Category extends Subcategory {
+  isMainCategory: boolean;
   posts: Post[];
   subcategories: Subcategory[];
 }

@@ -14,9 +14,11 @@ const Navigation = ({ categories }: NavigationProps) => {
     <>
       <Burger categories={data} />
       <nav className="hidden space-x-10 md:flex">
-        {data.map(({ name, slug, subcategories, posts }) => {
+        {data.map(({ name, slug, subcategories, posts, isMainCategory }) => {
           const isOpenCategory = name === openCategory;
           const style = isOpenCategory ? {} : { display: "none" };
+
+          if (!isMainCategory) return;
 
           if (subcategories.length)
             return (

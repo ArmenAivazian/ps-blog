@@ -25,33 +25,37 @@ const Menu = ({ isOpen, categories, setIsOpen }: MenuProps) => {
             </div>
             <div className="mt-6">
               <nav className="grid gap-y-8 pb-3">
-                {categories.map(({ name, slug, subcategories }) => {
-                  const category = (
-                    <a
-                      href={`${Resources.Category}${slug}`}
-                      className="hover:text-indigo-500 text-base font-bold -mb-3"
-                    >
-                      {name}
-                    </a>
-                  );
-                  return subcategories.length ? (
-                    <div className="grid gap-y-8">
-                      {category}
-                      {subcategories.map(({ slug, name }) => (
-                        <a
-                          href={slug}
-                          className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 pl-5"
-                        >
-                          <span className="text-base font-medium text-gray-900">
-                            {name}
-                          </span>
-                        </a>
-                      ))}
-                    </div>
-                  ) : (
-                    category
-                  );
-                })}
+                {categories.map(
+                  ({ name, slug, subcategories, isMainCategory }) => {
+                    if (!isMainCategory) return;
+
+                    const category = (
+                      <a
+                        href={`${Resources.Category}${slug}`}
+                        className="hover:text-indigo-500 text-base font-bold -mb-3"
+                      >
+                        {name}
+                      </a>
+                    );
+                    return subcategories.length ? (
+                      <div className="grid gap-y-8">
+                        {category}
+                        {subcategories.map(({ slug, name }) => (
+                          <a
+                            href={`${Resources.Category}${slug}`}
+                            className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 pl-5"
+                          >
+                            <span className="text-base font-medium text-gray-900">
+                              {name}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      category
+                    );
+                  }
+                )}
               </nav>
             </div>
           </div>

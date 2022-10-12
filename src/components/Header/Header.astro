@@ -15,6 +15,7 @@ const response = await fetch(import.meta.env.HYGRAPH_KEY, {
         name
         slug
         description
+        isMainCategory
         posts(last: 3) {
           slug
           title
