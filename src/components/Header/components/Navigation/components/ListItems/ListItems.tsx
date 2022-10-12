@@ -1,3 +1,4 @@
+import { Resources } from "../../../../../../constants/resources";
 import type { ListItemsProps } from "./types";
 
 const ListItems = ({ slug, subcategories, posts }: ListItemsProps) => {
@@ -12,7 +13,7 @@ const ListItems = ({ slug, subcategories, posts }: ListItemsProps) => {
             {posts.map(({ slug, title }) => (
               <li className="truncate text-base">
                 <a
-                  href={slug}
+                  href={`${Resources.Post}${slug}`}
                   className="font-medium text-gray-900 hover:text-gray-700"
                 >
                   {title}

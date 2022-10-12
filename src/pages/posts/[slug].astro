@@ -1,0 +1,152 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import { SITE_DESCRIPTION } from "../../config";
+import Header from "../../components/Header/Header.astro";
+import { Resources } from "../../constants/resources";
+
+interface Post {
+  slug: string;
+  title: string;
+  createdAt: string;
+  categories: {
+    name: string;
+    slug: string;
+  }[];
+  subcategories: {
+    name: string;
+    slug: string;
+  }[];
+  coverImage: {
+    url: string;
+    fileName: string;
+  };
+  content: {
+    html: string;
+  };
+}
+
+interface PostsData {
+  data: {
+    posts: Post[];
+  };
+}
+
+export async function getStaticPaths() {
+  const response = await fetch(import.meta.env.HYGRAPH_KEY, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+    {
+      posts {
+        slug
+        title
+        createdAt
+        categories {
+          name
+          slug
+        }
+        subcategories {
+          name
+          slug
+        }
+        coverImage {
+          url
+          fileName
+        }
+        content {
+          html
+        }
+      }
+    }
+      `,
+    }),
+  });
+  const posts = (await response.json()) as PostsData;
+
+  return posts.data.posts.map(
+    ({
+      slug,
+      title,
+      createdAt,
+      categories,
+      subcategories,
+      coverImage,
+      content,
+    }) => {
+      return {
+        params: { slug },
+        props: {
+          title,
+          createdAt: new Date(createdAt),
+          categories,
+          subcategories,
+          coverImage,
+          content: content.html,
+        },
+      };
+    }
+  );
+}
+
+const { title, createdAt, categories, subcategories, coverImage, content } =
+  Astro.props as Post;
+---
+
+<html>
+  <head>
+    <BaseHead description={SITE_DESCRIPTION} />
+  </head>
+  <body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+    <Header />
+    <main class="mx-7 lg:mx-6 mt-5 lg:mt-10 flex-grow">
+      <article class="max-w-5xl mx-auto">
+        <header class="mb-14">
+          <h1
+            class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3"
+          >
+            {title}
+          </h1>
+          <div class="text-center">
+            {createdAt.toLocaleString()}
+          </div>
+          <div class="mt-3 text-center">
+            {
+              categories.map(({ name: categoryName, slug }) => (
+                <>
+                  <a
+                    href={`${Resources.Category}${slug}`}
+                    class="lowercase inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5"
+                  >
+                    #{categoryName}
+                  </a>
+                  {subcategories.map(({ name, slug }) => (
+                    <a
+                      href={`${Resources.Category}${slug}`}
+                      class="lowercase inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-medium text-gray-700 m-0.5"
+                    >
+                      #{`${categoryName}-${name}`}
+                    </a>
+                  ))}
+                </>
+              ))
+            }
+          </div>
+          <div class="mt-10 -mx-7 md:mx-0">
+            <img
+              class="w-full max-w-2xl mx-auto"
+              src={coverImage.url}
+              width="960"
+              height="500"
+              alt={coverImage.fileName}
+            />
+          </div>
+        </header>
+        <div set:html={content} class="prose text-gray-800 max-w-none"></div>
+      </article>
+    </main>
+  </body>
+</html>

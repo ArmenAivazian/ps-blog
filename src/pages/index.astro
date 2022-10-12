@@ -21,7 +21,7 @@ const list = [
   <body class="min-h-screen flex flex-col">
     <Header />
     <main class="my-auto">
-      <ol class="px-3 md:px-6">
+      <ol class="px-2 md:px-4">
         {
         list.map((item, index) => 
           <li set:html={`${index + 1}. ${item}`} class="py-1 text-sm md:text-2xl xl:text-3xl"/>
