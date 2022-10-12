@@ -4,70 +4,48 @@ import { SITE_DESCRIPTION } from "../../config";
 import Header from "../../components/Header/Header.astro";
 import { Resources } from "../../constants/resources";
 
-interface Category {
-  name: string;
+interface Post {
   slug: string;
-  description: string;
-  posts: {
-    slug: string;
-    title: string;
-    createdAt: string;
-    excerpt: string;
-    coverImage: {
-      url: string;
-      fileName: string;
-    };
-  }[];
-}
-
-interface CategoriesData {
-  data: {
-    categories: Category[];
+  title: string;
+  createdAt: string;
+  excerpt: string;
+  coverImage: {
+    url: string;
+    fileName: string;
   };
 }
 
-export async function getStaticPaths() {
-  const response = await fetch(import.meta.env.HYGRAPH_KEY, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query: `
+interface PostsData {
+  data: {
+    posts: Post[];
+  };
+}
+
+const response = await fetch(import.meta.env.HYGRAPH_KEY, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify({
+    query: `
     {
-      categories {
-        name
+      posts {
         slug
-        description
-        posts {
-          slug
-          title
-          excerpt
-          createdAt
-          coverImage {
-            url
-            fileName
-          }
+        title
+        createdAt
+        excerpt
+        coverImage {
+          url
+          fileName
         }
       }
     }
       `,
-    }),
-  });
-  const categories = (await response.json()) as CategoriesData;
-
-  return categories.data.categories.map(
-    ({ slug, name, description, posts }) => {
-      return {
-        params: { slug },
-        props: { name, description, posts },
-      };
-    }
-  );
-}
-
-const { name, description, posts } = Astro.props as Category;
+  }),
+});
+const responseJson = (await response.json()) as PostsData;
+const posts = responseJson.data.posts;
 ---
 
 <html>
@@ -78,12 +56,6 @@ const { name, description, posts } = Astro.props as Category;
     <Header />
     <main class="mx-7 lg:mx-6 mt-5 lg:mt-10 flex-grow">
       <div class="max-w-5xl mx-auto">
-        <div class="mb-8 text-center">
-          <h1 class="text-4xl font-medium leading-normal mt-0">{name}</h1>
-        </div>
-        <div class="mb-2 text-gray-500 text-xm">
-          {description}
-        </div>
         <div class="flex flex-wrap -mx-2">
           {
             posts.map(({ coverImage, title, createdAt, excerpt, slug }) => (

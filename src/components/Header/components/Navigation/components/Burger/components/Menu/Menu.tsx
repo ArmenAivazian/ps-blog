@@ -60,7 +60,7 @@ const Menu = ({ isOpen, categories, setIsOpen }: MenuProps) => {
           </div>
           <div className="space-y-6 py-6 px-5">
             <a
-              href="#"
+              href={`${Resources.Post}all`}
               className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Всі пости
