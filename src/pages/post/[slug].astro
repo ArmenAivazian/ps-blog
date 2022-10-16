@@ -133,7 +133,11 @@ const { title, createdAt, categories, subcategories, coverImage, content } =
             />
           </div>
         </header>
-        <div set:html={content} class="prose text-gray-800 max-w-none"></div>
+        <div
+          set:html={content}
+          class="prose text-gray-800 max-w-none post-content"
+        >
+        </div>
       </article>
     </main>
   </body>
